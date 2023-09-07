@@ -20,7 +20,6 @@ const Player = ({
       return <BsPlayFill onClick={playSongHandler} size={"3em"} />;
     }
   };
-
   const activeLibraryHandler = (nextPrev) => {
     const newSongs = songs.map((song) => {
       if (song.id === nextPrev.id) {
