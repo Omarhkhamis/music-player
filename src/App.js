@@ -39,7 +39,9 @@ function App() {
   const songEndHandler = () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    if (isPlaying) audioRef.current.play();
+    setTimeout(() => {
+      if (isPlaying) audioRef.current.play();
+    }, 2000);
   };
   return (
     <div className={`app ${libraryStatus ? "library-active" : ""}`}>
