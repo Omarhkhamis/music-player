@@ -36,10 +36,10 @@ function App() {
     });
   };
 
-  const songEndHandler = async () => {
+  const songEndHandler = () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-    if (isPlaying) audioRef.play();
+    setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+    if (isPlaying) audioRef.current.play();
   };
   return (
     <div className={`app ${libraryStatus ? "library-active" : ""}`}>
